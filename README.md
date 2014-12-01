@@ -12,15 +12,15 @@ Example (Demo Source):
 ```html
 <div>
   <h2>Image to Text</h2>
-  <img id="src" src="/Shaun-McAvinney-alt.jpg">
+  <img id="src" src="Shaun-McAvinney-alt.jpg">
   <pre id="target" style="font-family: monospace;"></pre>
 </div>
-<script src="/imageToText.js"></script>
+<script src="imageToText.js"></script>
 <script>
 var img = document.getElementById("src");
 var target = document.getElementById("target");
 
-img.onload = function () {
+var showImageAsText = function () {
   // scale result font size to try to make the whole text image visible
   target.style.fontSize = Math.max((img.width / 100), 2) | 0 +"px";
 
@@ -45,6 +45,9 @@ img.onload = function () {
   console.log(text);
   target.textContent = text;
 };
+
+img.addEventListener("load", showImageAsText);
+window.addEventListener("load", showImageAsText);
 </script>
 ```
 
