@@ -8,7 +8,7 @@
 var img = document.getElementById("src");
 var target = document.getElementById("target");
 
-img.onload = function () {
+var showImageAsText = function () {
   // scale result font size to try to make the whole text image visible
   target.style.fontSize = Math.max((img.width / 100), 2) | 0 +"px";
 
@@ -33,4 +33,7 @@ img.onload = function () {
   console.log(text);
   target.textContent = text;
 };
+
+img.addEventListener("load", showImageAsText);
+window.addEventListener("load", showImageAsText);
 </script>
