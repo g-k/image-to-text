@@ -46,9 +46,10 @@
     return grayValueToTextMap[mappedValues[mappedValues.length-1]];
   };
 
-    var loadedImageToText = module.loadedImageToText = function (loadedImage, rows, columns) {
-    var resultHeight = rows || loadedImage.height;
+  var loadedImageToText = module.loadedImageToText = function (loadedImage, columns, rows) {
     var resultWidth = columns || loadedImage.width;
+    var resultHeight = rows || loadedImage.height;
+
     var canvas = window.document.createElement('canvas');
     var context = canvas.getContext('2d');
 
