@@ -1,9 +1,15 @@
 <div>
-  <h2 >Hello, is: Page 2</h2>
+  <h2>Image to Text</h2>
   <img id="src" src="/Shaun-McAvinney-alt.jpg">
-  <div>
-    <canvas id="canvas" height="300" width="300"></canvas>
-  </div>
-  <pre id="ascii" style="font-size: 6px;"></pre>
+  <pre id="ascii" style="font-family: monospace;"></pre>
 </div>
-<script src="/grayscaler.js"></script>
+<script src="/imageToText.js"></script>
+<script>
+var img = document.getElementById("src");
+var ascii = document.getElementById("ascii");
+
+img.onload = function () {
+  ascii.style.fontSize = Math.max((img.width / 100), 2) | 0 +"px";
+  ascii.textContent = window.ITT.loadedImageToText(img, 64, 64);
+};
+</script>
