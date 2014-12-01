@@ -1,3 +1,15 @@
+Experiment that converts an image to text using the mapping from:
+http://larc.unt.edu/ian/art/ascii/shader/
+
+Exposes the ITT (for Image To Text) namespace with the
+loadedImageToText function.
+
+[Demo](https://g-k.github.io/image-to-text/)
+
+Example (Demo Source):
+
+
+```html
 <div>
   <h2>Image to Text</h2>
   <img id="src" src="/Shaun-McAvinney-alt.jpg">
@@ -34,3 +46,9 @@ img.onload = function () {
   target.textContent = text;
 };
 </script>
+```
+
+Optional TODO:
+- [ ] Use custom mappings
+- [ ] Use WebGL shader when supported
+- [ ] Handle video / animation
